@@ -40,7 +40,7 @@ use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderAddServicesComponent;
 use App\Http\Livewire\Sprovider\SproviderEditServicesComponent;
 
-Route::get('/', HomeComponent::class)->name('home'); //->middleware('verified');
+Route::get('https://vs-home-services.herokuapp.com/', HomeComponent::class)->name('home'); //->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 
 Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
@@ -58,7 +58,7 @@ Route::get('/payment',[PaytmController::class,'index'])->name('payment');
 Route::post('/paytm-store',[PaytmController::class,'store'])->name('paytm-store');
 Route::post('/paytm-callback',[PaytmController::class,'paytmCallback'])->name('paytm-callback');
 //paytm End
-// Excel 
+// Excel
 Route::get('/admin/service-provider/export-csv', [ExportDataController::class,'export'])->name('admin.export_service_provider');
 Route::get('/admin/user/export-csv', [ExportDataController::class,'export_customer'])->name('admin.export_customer');
 Route::get('/admin/service-categories/export-csv', [ExportDataController::class,'export_scategories'])->name('admin.export_service_categories');
