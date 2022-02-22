@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Customer;
 use App\Models\Paytm;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CustomerDashboardComponent extends Component
 {
@@ -27,7 +28,7 @@ class CustomerDashboardComponent extends Component
     public function delete($id)
     {
         $paytm = Paytm::find($id);
-        // if ($paytm->slug_image) 
+        // if ($paytm->slug_image)
         // {
         //     unlink('images/services'.'/'.$paytm->slug_image);
         // }
@@ -36,10 +37,16 @@ class CustomerDashboardComponent extends Component
     }
     public function render()
     {
-        
+
         $paytms = Paytm::paginate(5);
         $totalServices = Paytm::where('user_id',Auth::user()->id)->count();
-        $totalCost = Paytm::where('user_id',Auth::user()->id)->sum('price');
+        $totalCost =DB::table("paytms")
+
+	    ->select(DB::raw("SUM(price) as total"))
+
+	    ->where("user_id",Auth::user()->id)
+
+	    ->get();
         return view('livewire.customer.customer-dashboard-component',['paytms'=>$paytms,'totalServices'=>$totalServices,'totalCost'=>$totalCost])->layout('FrontEnd.layouts.guest');
     }
 }
