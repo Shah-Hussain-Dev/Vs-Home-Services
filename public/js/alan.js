@@ -16,7 +16,14 @@ var alanBtnInstance = alanBtn({
         } else if (commandData.command === "goto-contact") {
             //call client code that will react on the received command
             window.location.href = "/contact-us";
-        } else if (commandData.command === "goto-service") {
+        } else if (commandData.command === "goto-electrician") {
+            //call client code that will react on the received command
+            window.location.href = "/Electrician/services";
+        } else if (commandData.command === "goto-electronic") {
+            //call client code that will react on the received command
+            window.location.href = "/Electronic/services";
+        }
+         else if (commandData.command === "goto-service") {
             //call client code that will react on the received command
             window.location.href = "/service-categories";
         } else if (commandData.command === "book-service") {

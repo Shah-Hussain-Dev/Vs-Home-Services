@@ -143,7 +143,7 @@
                                     Print
                                 </button>
                                 <button class="btn btn-outline-primary" style="padding:4px 30px; border:2px solid #007bff;; margin-bottom:15px;">
-                                    <a href="/">Home</a>
+                                    <a href="/customer/dashboard">Dashboard</a>
                                 </button>
                             </div>
 
