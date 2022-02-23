@@ -55,7 +55,7 @@
                                 <div class="card-body pt-4 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">₹{{$totalCost[0]->total}}</h3>
+                                            <h3 class="font-large-1 mb-0">₹350</h3>
                                             <span class="font-medium-4"><b>Total Booked Services</b></span>
                                         </div>
                                         <div class="media-right white text-right">
