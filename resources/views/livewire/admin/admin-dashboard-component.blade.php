@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     google.charts.load('current', {
         'packages': ['corechart']
     });
@@ -9,7 +9,7 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            <?php echo $chartData; ?>
+
         ]);
         var options = {
             is3D: true,
@@ -18,7 +18,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
     }
-</script>
+</script> --}}
 <div>
     @include('../../layouts/admin/header')
     <div class="main-panel">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 {{-- Line with Area Chart 1 Starts--> --}}
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-6 col-sm-11 h-100">
                         <div class="card shadow w-100">
                             <div class="card-header">
@@ -140,7 +140,7 @@
                     </div>
 
 
-                </div>
+                </div> --}}
                 <div class="row ">
                     <div class="col-md-12 col-sm-12">
                         <div class="card shadow">
@@ -359,7 +359,7 @@
     </div>
     <!-- END : End Main Content-->
 </div>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+{{-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
     var users = <?php echo json_encode($new_users); ?>;
     Highcharts.chart('container', {
@@ -406,7 +406,7 @@
             }]
         }
     });
-</script>
+</script> --}}
 <script>
     window.addEventListener('Swal.fire:confirm', event => {
         Swal.fire({
