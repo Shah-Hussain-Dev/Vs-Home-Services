@@ -40,7 +40,7 @@ use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use App\Http\Livewire\Sprovider\SproviderAddServicesComponent;
 use App\Http\Livewire\Sprovider\SproviderEditServicesComponent;
 
-Route::get('/', HomeComponent::class)->name('home'); //->middleware('verified');
+Route::get('//', HomeComponent::class)->name('home'); //->middleware('verified');
 Route::get('/service-categories', ServiceCategoriesComponent::class)->name('home.service_categories');
 
 Route::get('/{category_slug}/services',ServicesByCategoryComponent::class)->name('home.services_by_category');
