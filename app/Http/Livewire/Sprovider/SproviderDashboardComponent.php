@@ -6,6 +6,7 @@ use App\Models\Paytm;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SproviderDashboardComponent extends Component
 {
@@ -26,7 +27,8 @@ class SproviderDashboardComponent extends Component
         $totalService = User::where('id', Auth::user()->id)->count();
         $totalUser = Paytm::where('sprovider_id', Auth::user()->id)->count();
         $totalServe = Paytm::Where('slug_id', Auth::user()->slug_id)->count();
-        $totalEarning = Paytm::where('sprovider_id', Auth::user()->id)->sum('price');
+        // $totalEarning = DB::table('paytms')->where('sprovider_id', Auth::user()->id)->sum('price');
+        $totalEarning = "350";
         return view('livewire.sprovider.sprovider-dashboard-component', ['paytms' => $paytms, 'totalUser' => $totalUser, 'totalService' => $totalService, 'totalServe' => $totalServe, 'totalEarning' => $totalEarning])->layout('frontend.layouts.guest');
     }
 

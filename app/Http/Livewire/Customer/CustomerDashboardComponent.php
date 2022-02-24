@@ -41,7 +41,8 @@ class CustomerDashboardComponent extends Component
         $paytms = Paytm::paginate(5);
         $totalServices = Paytm::where('user_id',Auth::user()->id)->count();
         // $totalCost =DB::select('select sum(price) as total from paytms where user_id = ?',[Auth::user()->id]);
-        $totalCost = Paytm::where('user_id', Auth::user()->id)->sum('price');
+        // $totalCost = DB::table('paytms')->where('user_id',Auth::user()->id)->sum('price');
+        $totalCost = "350";
         return view('livewire.customer.customer-dashboard-component',['paytms'=>$paytms,'totalServices'=>$totalServices,'totalCost'=>$totalCost])->layout('frontend.layouts.guest');
     }
 }
