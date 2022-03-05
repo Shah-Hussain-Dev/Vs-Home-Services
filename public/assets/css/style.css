@@ -2511,6 +2511,7 @@ hr.separator:before {
     display: block;
     font-weight: 600;
     color: #062b5b;
+    padding-top: 20px;
 }
 .counts .count-box p {
     padding: 0;
